@@ -1,0 +1,19 @@
+int digitalsensor = 2;
+int analogsensor = A0;
+void setup()
+{
+pinMode (digitalsensor, INPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+	bool digital = digitalRead(digitalsensor);
+	int analog = analogRead(analogsensor);
+	Serial.print("Analog value = ");
+	Serial.print(analog);
+	Serial.print("\t");
+	Serial.print("Digital Value = ");
+	Serial.print(digital);
+	Serial.print("\n");
+	delay(1000);
+}
